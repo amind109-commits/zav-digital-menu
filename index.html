@@ -1,71 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZAV Cafe Menu</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZAV Cafe</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;
- background:#f4eee5;
- color:#30251d;
- font-family:Tahoma,Arial,sans-serif;
+body{margin:0;background:#eee4d4;color:#241b15;font-family:Tahoma,Arial,sans-serif}
+header{background:#211914;color:#eee4d4;text-align:center;padding:35px 15px}
+.logo{font-family:Georgia,serif;font-size:55px;letter-spacing:10px;font-weight:bold}
+.line{width:55px;height:2px;background:#a77b50;margin:12px auto}
+.sub{font-size:12px;letter-spacing:5px}
+main{max-width:720px;margin:auto;padding:20px 15px}
+.intro{text-align:center;margin:10px 0 25px;color:#6d513b}
+button{
+width:100%;border:0;border-radius:14px;background:#5a3b28;color:#f4eadb;
+padding:17px;margin:7px 0;font-size:16px;font-weight:bold;
+box-shadow:0 4px 10px #0002;cursor:pointer
 }
-header{
- background:#30251d;
- color:#f4eee5;
- text-align:center;
- padding:35px 15px;
-}
-.logo{
- font-size:48px;
- font-weight:bold;
- letter-spacing:8px;
-}
-.subtitle{
- letter-spacing:4px;
- margin-top:5px;
-}
-main{
- max-width:750px;
- margin:auto;
- padding:15px;
-}
-.section{
- margin:28px 0;
-}
-h2{
- text-align:center;
- font-size:22px;
- letter-spacing:2px;
- border-bottom:1px solid #8b6b4a;
- padding-bottom:10px;
- margin-bottom:5px;
-}
-.item{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
- padding:13px 5px;
- border-bottom:1px solid #ddd1c2;
-}
-.name{
- font-size:16px;
-}
-.price{
- font-weight:bold;
- white-space:nowrap;
- font-size:14px;
-}
-footer{
- text-align:center;
- padding:30px;
- color:#806b58;
-}
+button span{display:block;font-size:11px;opacity:.75;margin-top:4px;letter-spacing:2px}
+.menu{display:none;background:#f8f1e6;border-radius:15px;padding:8px 14px;margin:5px 0 15px}
+.menu.open{display:block}
+.item{display:flex;justify-content:space-between;gap:12px;padding:14px 3px;border-bottom:1px solid #d8c8b5}
+.item:last-child{border:0}
+.name{font-weight:bold}
+.en{display:block;font-size:10px;color:#967356;margin-top:4px;direction:ltr;text-align:right}
+.price{font-weight:bold;white-space:nowrap;color:#5a3b28;font-size:13px}
+footer{text-align:center;padding:30px;color:#72563e}
 </style>
 </head>
 
@@ -73,84 +34,85 @@ footer{
 
 <header>
 <div class="logo">ZAV</div>
-<div class="subtitle">CAFE MENU</div>
+<div class="line"></div>
+<div class="sub">CAFE • COFFEE • MORE</div>
 </header>
 
 <main>
+<div class="intro">منوی دیجیتال ZAV</div>
 
-<div class="section">
-<h2>☕ نوشیدنی گرم</h2>
-
-<div class="item"><span class="name">ماسالا</span><span class="price">۲۱۵,۰۰۰</span></div>
-<div class="item"><span class="name">کرک</span><span class="price">۲۲۰,۰۰۰</span></div>
-<div class="item"><span class="name">ساوون هات</span><span class="price">۲۷۵,۰۰۰</span></div>
-<div class="item"><span class="name">هات چاکلت</span><span class="price">۲۳۰,۰۰۰</span></div>
-<div class="item"><span class="name">چاکلت بری</span><span class="price">۲۵۰,۰۰۰</span></div>
-<div class="item"><span class="name">بیسکویت</span><span class="price">۲۴۵,۰۰۰</span></div>
+<button onclick="toggle('hot')">نوشیدنی گرم <span>HOT DRINKS</span></button>
+<div id="hot" class="menu">
+<div class="item"><div class="name">ماسالا<span class="en">Masala</span></div><div class="price">۲۱۵,۰۰۰</div></div>
+<div class="item"><div class="name">کرک<span class="en">Karak</span></div><div class="price">۲۲۰,۰۰۰</div></div>
+<div class="item"><div class="name">ساوون هات<span class="en">Savoon Hot</span></div><div class="price">۲۷۵,۰۰۰</div></div>
+<div class="item"><div class="name">هات چاکلت<span class="en">Hot Chocolate</span></div><div class="price">۲۳۰,۰۰۰</div></div>
+<div class="item"><div class="name">چاکلت بری<span class="en">Chocolate Berry</span></div><div class="price">۲۵۰,۰۰۰</div></div>
+<div class="item"><div class="name">بیسکویت<span class="en">Biscuit</span></div><div class="price">۲۴۵,۰۰۰</div></div>
 </div>
 
-<div class="section">
-<h2>☕ قهوه</h2>
-
-<div class="item"><span class="name">اسپرسو</span><span class="price">۹۰,۰۰۰ / ۱۵۰,۰۰۰</span></div>
-<div class="item"><span class="name">آمریکانو</span><span class="price">۱۰۰,۰۰۰ / ۱۶۰,۰۰۰</span></div>
-<div class="item"><span class="name">ماکیاتو</span><span class="price">۱۱۰,۰۰۰ / ۱۷۰,۰۰۰</span></div>
-<div class="item"><span class="name">کورتادو</span><span class="price">۱۲۵,۰۰۰ / ۱۸۵,۰۰۰</span></div>
-<div class="item"><span class="name">کاپوچینو</span><span class="price">۱۵۰,۰۰۰ / ۲۱۰,۰۰۰</span></div>
-<div class="item"><span class="name">لته</span><span class="price">۱۷۰,۰۰۰ / ۲۳۰,۰۰۰</span></div>
-<div class="item"><span class="name">کارامل ماکیاتو</span><span class="price">۱۹۰,۰۰۰ / ۲۴۰,۰۰۰</span></div>
-<div class="item"><span class="name">لته نارگیل</span><span class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</span></div>
-<div class="item"><span class="name">لته بیسکویت</span><span class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</span></div>
-<div class="item"><span class="name">لته عسلی</span><span class="price">۲۰۰,۰۰۰ / ۲۵۰,۰۰۰</span></div>
+<button onclick="toggle('coffee')">قهوه <span>COFFEE</span></button>
+<div id="coffee" class="menu">
+<div class="item"><div class="name">اسپرسو<span class="en">Espresso</span></div><div class="price">۹۰,۰۰۰ / ۱۵۰,۰۰۰</div></div>
+<div class="item"><div class="name">آمریکانو<span class="en">Americano</span></div><div class="price">۱۰۰,۰۰۰ / ۱۶۰,۰۰۰</div></div>
+<div class="item"><div class="name">ماکیاتو<span class="en">Macchiato</span></div><div class="price">۱۱۰,۰۰۰ / ۱۷۰,۰۰۰</div></div>
+<div class="item"><div class="name">کورتادو<span class="en">Cortado</span></div><div class="price">۱۲۵,۰۰۰ / ۱۸۵,۰۰۰</div></div>
+<div class="item"><div class="name">کاپوچینو<span class="en">Cappuccino</span></div><div class="price">۱۵۰,۰۰۰ / ۲۱۰,۰۰۰</div></div>
+<div class="item"><div class="name">لته<span class="en">Latte</span></div><div class="price">۱۷۰,۰۰۰ / ۲۳۰,۰۰۰</div></div>
+<div class="item"><div class="name">کارامل ماکیاتو<span class="en">Caramel Macchiato</span></div><div class="price">۱۹۰,۰۰۰ / ۲۴۰,۰۰۰</div></div>
+<div class="item"><div class="name">لته نارگیل<span class="en">Coconut Latte</span></div><div class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</div></div>
+<div class="item"><div class="name">لته بیسکویت<span class="en">Biscuit Latte</span></div><div class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</div></div>
+<div class="item"><div class="name">لته عسلی<span class="en">Honey Latte</span></div><div class="price">۲۰۰,۰۰۰ / ۲۵۰,۰۰۰</div></div>
 </div>
 
-<div class="section">
-<h2>🥤 نوشیدنی سرد</h2>
-
-<div class="item"><span class="name">نایت وایت</span><span class="price">۲۳۰,۰۰۰</span></div>
-<div class="item"><span class="name">ساورومنگ</span><span class="price">۳۱۰,۰۰۰</span></div>
-<div class="item"><span class="name">گرمین</span><span class="price">۲۴۳,۰۰۰</span></div>
-<div class="item"><span class="name">موهیتو کلاسیک</span><span class="price">۲۰۰,۰۰۰</span></div>
-<div class="item"><span class="name">رد موهیتو</span><span class="price">۲۳۰,۰۰۰</span></div>
+<button onclick="toggle('cold')">نوشیدنی سرد <span>COLD DRINKS</span></button>
+<div id="cold" class="menu">
+<div class="item"><div class="name">نایت وایت<span class="en">Night White</span></div><div class="price">۲۳۰,۰۰۰</div></div>
+<div class="item"><div class="name">ساورومنگ<span class="en">Sour Mango</span></div><div class="price">۳۱۰,۰۰۰</div></div>
+<div class="item"><div class="name">گرمین<span class="en">Germine</span></div><div class="price">۲۴۳,۰۰۰</div></div>
+<div class="item"><div class="name">موهیتو کلاسیک<span class="en">Classic Mojito</span></div><div class="price">۲۰۰,۰۰۰</div></div>
+<div class="item"><div class="name">رد موهیتو<span class="en">Red Mojito</span></div><div class="price">۲۳۰,۰۰۰</div></div>
 </div>
 
-<div class="section">
-<h2>🧊 آیس کافی</h2>
-
-<div class="item"><span class="name">آیس آمریکانو</span><span class="price">۱۱۵,۰۰۰ / ۱۷۵,۰۰۰</span></div>
-<div class="item"><span class="name">آیس لته</span><span class="price">۱۹۵,۰۰۰ / ۲۵۵,۰۰۰</span></div>
-<div class="item"><span class="name">آیس کارامل ماکیاتو</span><span class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس لته نارگیل</span><span class="price">۲۳۰,۰۰۰ / ۲۸۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس لته بیسکویت</span><span class="price">۲۳۰,۰۰۰ / ۲۸۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس لته عسلی</span><span class="price">۲۲۰,۰۰۰ / ۲۷۰,۰۰۰</span></div>
-<div class="item"><span class="name">تونیک اسپرسو</span><span class="price">۱۳۰,۰۰۰ / ۱۹۰,۰۰۰</span></div>
+<button onclick="toggle('ice')">آیس کافی <span>ICE COFFEE</span></button>
+<div id="ice" class="menu">
+<div class="item"><div class="name">آیس آمریکانو<span class="en">Iced Americano</span></div><div class="price">۱۱۵,۰۰۰ / ۱۷۵,۰۰۰</div></div>
+<div class="item"><div class="name">آیس لته<span class="en">Iced Latte</span></div><div class="price">۱۹۵,۰۰۰ / ۲۵۵,۰۰۰</div></div>
+<div class="item"><div class="name">آیس کارامل ماکیاتو<span class="en">Iced Caramel Macchiato</span></div><div class="price">۲۱۰,۰۰۰ / ۲۶۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس لته نارگیل<span class="en">Iced Coconut Latte</span></div><div class="price">۲۳۰,۰۰۰ / ۲۸۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس لته بیسکویت<span class="en">Iced Biscuit Latte</span></div><div class="price">۲۳۰,۰۰۰ / ۲۸۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس لته عسلی<span class="en">Iced Honey Latte</span></div><div class="price">۲۲۰,۰۰۰ / ۲۷۰,۰۰۰</div></div>
+<div class="item"><div class="name">تونیک اسپرسو<span class="en">Espresso Tonic</span></div><div class="price">۱۳۰,۰۰۰ / ۱۹۰,۰۰۰</div></div>
 </div>
 
-<div class="section">
-<h2>🥭 نوشیدنی‌های قهوه سرد</h2>
-
-<div class="item"><span class="name">سیتروس کافی</span><span class="price">۲۷۳,۰۰۰</span></div>
-<div class="item"><span class="name">رد کافی</span><span class="price">۲۷۴,۰۰۰</span></div>
-<div class="item"><span class="name">ماچا</span><span class="price">۱۵۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس منگو ماچا</span><span class="price">۲۳۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس استرابری ماچا</span><span class="price">۲۱۰,۰۰۰</span></div>
-<div class="item"><span class="name">آیس کوکو ماچا</span><span class="price">۲۲۰,۰۰۰</span></div>
+<button onclick="toggle('special')">نوشیدنی‌های ویژه <span>SPECIAL DRINKS</span></button>
+<div id="special" class="menu">
+<div class="item"><div class="name">سیتروس کافی<span class="en">Citrus Coffee</span></div><div class="price">۲۷۳,۰۰۰</div></div>
+<div class="item"><div class="name">رد کافی<span class="en">Red Coffee</span></div><div class="price">۲۷۴,۰۰۰</div></div>
+<div class="item"><div class="name">ماچا<span class="en">Matcha</span></div><div class="price">۱۵۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس منگو ماچا<span class="en">Iced Mango Matcha</span></div><div class="price">۲۳۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس استرابری ماچا<span class="en">Iced Strawberry Matcha</span></div><div class="price">۲۱۰,۰۰۰</div></div>
+<div class="item"><div class="name">آیس کوکو ماچا<span class="en">Iced Cocoa Matcha</span></div><div class="price">۲۲۰,۰۰۰</div></div>
 </div>
 
-<div class="section">
-<h2>🍨 چرن آیس کریم</h2>
-
-<div class="item"><span class="name">بیسکویت</span><span class="price">۲۸۰,۰۰۰</span></div>
-<div class="item"><span class="name">بیسکویت بادام زمینی</span><span class="price">۳۲۰,۰۰۰</span></div>
-<div class="item"><span class="name">بیسکویت توت فرنگی</span><span class="price">۳۱۰,۰۰۰</span></div>
-<div class="item"><span class="name">بیسکویت شکلاتی</span><span class="price">۳۵۰,۰۰۰</span></div>
+<button onclick="toggle('icecream')">آیس کریم <span>CHURNED ICE CREAM</span></button>
+<div id="icecream" class="menu">
+<div class="item"><div class="name">بیسکویت<span class="en">Biscuit</span></div><div class="price">۲۸۰,۰۰۰</div></div>
+<div class="item"><div class="name">بیسکویت بادام زمینی<span class="en">Peanut Biscuit</span></div><div class="price">۳۲۰,۰۰۰</div></div>
+<div class="item"><div class="name">بیسکویت توت فرنگی<span class="en">Strawberry Biscuit</span></div><div class="price">۳۱۰,۰۰۰</div></div>
+<div class="item"><div class="name">بیسکویت شکلاتی<span class="en">Chocolate Biscuit</span></div><div class="price">۳۵۰,۰۰۰</div></div>
 </div>
 
 </main>
 
-<footer>
-ZAV CAFE
-</footer>
+<footer>ZAV CAFE</footer>
+
+<script>
+function toggle(id){
+ const el=document.getElementById(id);
+ el.classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
